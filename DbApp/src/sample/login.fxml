@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.HBox?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import java.net.URL?>
+
+<GridPane fx:id="grid" alignment="CENTER" hgap="10" prefHeight="273.0" prefWidth="285.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginControl">
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints maxHeight="25.0" minHeight="3.0" prefHeight="5.0" />
+        <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="32.0" />
+        <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="29.0" />
+        <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="33.0" />
+        <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="40.0" />
+    </rowConstraints>
+    <columnConstraints>
+        <ColumnConstraints maxWidth="200.0" minWidth="10.0" prefWidth="88.0" />
+        <ColumnConstraints maxWidth="133.0" minWidth="0.0" prefWidth="112.0" />
+    </columnConstraints>
+    <padding>
+        <Insets bottom="15.0" left="25.0" right="25.0" top="18.0" />
+    </padding>
+    <children>
+        <Text id="welcome-text" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" textAlignment="CENTER" wrappingWidth="206.13671875" GridPane.columnSpan="2" />
+        <Label prefHeight="28.0" prefWidth="84.0" text="Username:" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin></Label>
+        <Label layoutX="55.0" layoutY="117.0" prefHeight="30.0" prefWidth="87.0" text="Password:" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin></Label>
+      <TextField fx:id="user" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <PasswordField fx:id="pass" prefHeight="25.0" prefWidth="115.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <children>
+            <JFXButton fx:id="loginbutton" onMouseClicked="#handleLogin" text="Sign In" />
+         </children>
+        </HBox>
+        <VBox prefHeight="54.0" prefWidth="165.0" GridPane.columnSpan="2" GridPane.rowIndex="5">
+            <children>
+                <Hyperlink id="sign" fx:id="signup" onMouseClicked="#handleSign" prefHeight="23.0" prefWidth="212.0" text="Don't have an Account? Sign Up" />
+            </children>
+        </VBox>
+    </children>
+    <stylesheets>
+        <URL value="@Main.css" />
+    </stylesheets>
+</GridPane>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Path?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.shape.MoveTo?>
+<?import javafx.scene.shape.ArcTo?>
+<?import javafx.scene.shape.LineTo?>
+<?import javafx.scene.shape.ClosePath?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+
+<VBox id="VBox" alignment="center" prefHeight="320.0" prefWidth="400" spacing="20" style="-fx-background-color: lightblue;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sample.Controller">
+
+    <children>
+      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="LOGOUT" />
+        <StackPane>
+          <children>
+            <Group>
+                <children>
+                    <Path fx:id="path" fill="orange" stroke="darkgoldenrod" strokeWidth="15">
+
+                        <effect>
+                            <DropShadow fx:id="dropshadow" color="gray" offsetX="5" offsetY="5" radius="10" />
+
+                        </effect>
+
+                        <elements>
+                            <MoveTo x="0" y="0" />
+                            <ArcTo radiusX="100" radiusY="50" sweepFlag="true" x="270" y="0" />
+                            <LineTo x="270" y="50" />
+                            <ArcTo radiusX="100" radiusY="50" sweepFlag="true" x="0" y="50" />
+                            <ClosePath />
+                        </elements>
+                    </Path>
+
+                    <Line effect="$dropshadow" endX="10" endY="0" startX="-25" startY="0" stroke="blue" strokeLineCap="ROUND" strokeWidth="4" />
+                    <Rectangle fx:id="rectangle" arcHeight="10" arcWidth="10" fill="yellow" height="20" rotate="90" stroke="black" width="35" x="-15" y="0" />
+                </children>
+            </Group>
+
+        <Text fx:id="text">
+            <font><Font name="Verdana" size="16" /></font>
+            <effect><Reflection /></effect>
+        </Text>
+          </children>
+        </StackPane>
+
+        <HBox alignment="CENTER" spacing="20">
+   <children>
+               <Button fx:id="slowerButton" onAction="#slowerAction" />
+               <Button fx:id="startPauseButton" onAction="#startPauseAction" prefWidth="80" />
+               <Button fx:id="fasterButton" onAction="#fasterAction" />
+   </children>
+        </HBox>
+
+    </children>
+
+</VBox>
